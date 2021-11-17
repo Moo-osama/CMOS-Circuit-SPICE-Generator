@@ -51,26 +51,39 @@ Mname drain gate source body type
 
 ### Test case 1
 Expression: (A & B) '
+
 PUN: A' & B'
+
 PDN: A & B
 
+
 SPICE Statement:
+
 M1 Y B VDD VDD PMOS
+
 M2 Y A VDD VDD PMOS
+
 M3 Y A 1 1 NMOS
+
 M4 1 B 0 0 NMOS
+
 
 Circuit:
 <p align="center">
 <img src="circuit1.png">
 </p>
 
+
 ### Test case 2
 Expression: (A | B & (C' | D)) '
+
 PUN: Y = A' & (B' + C & D')
+
 PDN: Y' = A | B & (C' | D)
 
+
 SPICE Statements:
+
 M1 Y A 1 1 PMOS
 
 M2 1 B VDD VDD PMOS
@@ -95,28 +108,41 @@ M11 5 C 0 0 NMOS
 
 M12 4 5 0 0 NMOS
 
+
 Circuit:
 <p align="center">
 <img src="circuit2.png">
 </p>
 
+
 ### Test case 3
 Expression: Y = (A & (B | C & D)) '
+
 PUN: Y = A' | B' & (C' | D')
+
 PDN: Y' = A & (B | C & D)
 
-### SPICE Statement:
+
+SPICE Statement:
+
 M1 Y A VDD VDD PMOS
+
 M2 Y C 1 1 PMOS
+
 M3 Y D 1 1 PMOS
+
 M4 1 B VDD VDD PMOS
+
 M5 Y A 2 2 NMOS
+
 M6 2 B 0 0 NMOS
+
 M7 2 C 3 3 NMOS
+
 M8 3 D 0 0 NMOS
 
-Circuit:
 
+Circuit:
 <p align="center">
 <img src="circuit3.png">
 </p>
