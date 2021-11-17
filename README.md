@@ -72,16 +72,27 @@ PDN: Y' = A | B & (C' | D)
 
 SPICE Statements:
 M1 Y A 1 1 PMOS
+
 M2 1 B VDD VDD PMOS
+
 M3 1 D 2 2 PMOS
+
 M4 3 C VDD VDD PMOS
+
 M5 3 C 0 0 NMOS
+
 M6 2 3 VDD VDD PMOS
+
 M7 Y A 0 0 NMOS
+
 M8 Y B 4 4 NMOS
+
 M9 4 D 0 0 NMOS
+
 M10 5 C VDD VDD PMOS
+
 M11 5 C 0 0 NMOS
+
 M12 4 5 0 0 NMOS
 
 Circuit:
